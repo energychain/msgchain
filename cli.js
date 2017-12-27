@@ -3,7 +3,7 @@
 const vorpal = require('vorpal')();
 const fs = require('fs');
 require('dotenv').config();
-const msgchain=require("./msgchain.js");
+const msgchain=new require("./msgchain.js");
 
 vorpal
   .command('store <file>')    

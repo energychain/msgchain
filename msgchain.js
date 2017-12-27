@@ -4,7 +4,7 @@ const ipfs_is_read=false;
 var StromDAOBO = require("stromdao-businessobject");   
 var request = require('then-request');
 
-module.exports = {
+module.exports = function() {
 	retrieve:function(hash,cb) {
 		var _retr=function(ipfs_hash,cb) {			
 			request('GET', 'https://fury.network/ipfs/'+ipfs_hash).done(function (res) {
