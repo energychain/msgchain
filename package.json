@@ -1,0 +1,35 @@
+{
+  "name": "msgchain",
+  "version": "1.0.0",
+  "description": "Module to build a chain of messages to be committed to energy blockchain.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/energychain/msgchain.git"
+  },
+  "bin": {
+    "stromdao.msgchain": "./cli.js"
+  },
+  "keywords": [
+    "messaging",
+    "energy",
+    "blockchain",
+    "stromdao"
+  ],
+  "author": "Thorsten Zoerner <thorsten.zoerner@stromdao.de>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/energychain/msgchain/issues"
+  },
+  "homepage": "https://github.com/energychain/msgchain#readme",
+  "dependencies": {
+    "cli-helper": "^0.2.1",
+    "dotenv": "^4.0.0",
+    "ipfs": "^0.27.5",
+    "stromdao-businessobject": "^0.5.27",
+    "stromdao-cli-helper": "0.0.5"
+  }
+}
