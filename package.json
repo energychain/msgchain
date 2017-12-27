@@ -1,6 +1,6 @@
 {
   "name": "msgchain",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Module to build a chain of messages to be committed to energy blockchain.",
   "main": "index.js",
   "scripts": {
@@ -30,6 +30,7 @@
     "dotenv": "^4.0.0",
     "ipfs": "^0.27.5",
     "stromdao-businessobject": "^0.5.27",
-    "stromdao-cli-helper": "0.0.5"
+    "stromdao-cli-helper": "0.0.5",
+    "then-request": "^4.1.0"
   }
 }

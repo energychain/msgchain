@@ -15,7 +15,32 @@ vorpal
 		});		
 	});
 
+vorpal
+  .command('retrieve')    
+  .description("Resolves Energy Chain address and retrieves content from IPFS") 
+  .option('-a, --address <energy_chain>', 'Energy Chain Address')
+  .types({
+    string: ['a', 'string']
+  }) 
+  .action(function (args,callback) {		
+		msgchain.retrieve(args.options.address,function(str) {
+			vorpal.log(str);callback();
+		});		
+	});
 
+vorpal
+  .command('retrieveIPFS')    
+  .description("Resolves Energy Chain address and retrieves IPFS hash") 
+  .option('-a, --address <energy_chain>', 'Energy Chain Address')
+  .types({
+    string: ['a', 'string']
+  }) 
+  .action(function (args,callback) {		
+		msgchain.retrieveIPFS(args.options.address,function(str) {
+			vorpal.log(str);callback();
+		});		
+});
+		
 if(typeof process.env.rpcprovider !="undefined") {	
 		global.rpcprovider=process.env.rpcprovider;
 } else {
