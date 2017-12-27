@@ -1,6 +1,6 @@
 {
   "name": "msgchain",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "Module to build a chain of messages to be committed to energy blockchain.",
   "main": "index.js",
   "scripts": {

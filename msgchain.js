@@ -5,7 +5,7 @@ var StromDAOBO = require("stromdao-businessobject");
 var request = require('then-request');
 
 module.exports = function() {
-	retrieve:function(hash,cb) {
+	 this.retrieve=function(hash,cb) {
 		var _retr=function(ipfs_hash,cb) {			
 			request('GET', 'https://fury.network/ipfs/'+ipfs_hash).done(function (res) {
 			  if((typeof cb != "undefined")&&(cb!=null)) cb(res.getBody().toString());
@@ -21,8 +21,8 @@ module.exports = function() {
 		} else {		
 			_retr(hash);
 		}
-	},
-	retrieveIPFS:function(hash,cb) {
+	}
+	this.retrieveIPFS=function(hash,cb) {
 		var _retr=function(ipfs_hash,cb) {						
 			 if((typeof cb != "undefined")&&(cb!=null)) cb(ipfs_hash);			
 		}
@@ -36,8 +36,8 @@ module.exports = function() {
 		} else {		
 			_retr(hash);
 		}
-	},
-	store:function(data,cb) {		
+	}
+	this.store=function(data,cb) {		
 		var node = new StromDAOBO.Node({external_id:"msgchain",testMode:true,rpc:global.rpcprovider});		
 		ipfs.files.add({path:'/storage',content:new ipfs.types.Buffer(data,'ascii')}, function (err, files) {
 			var s=node.storage.getItemSync(files[0].hash);
@@ -45,7 +45,7 @@ module.exports = function() {
 				node.stringstoragefactory().then(function(ssf) {
 					ssf.build(files[0].hash).then(function(tx) {
 						node.storage.setItemSync(files[0].hash,tx);	
-						msgchain.retrieve(tx,function(s) { 
+						this.retrieve(tx,function(s) { 
 							if((typeof cb != "undefined")&&(cb!=null)) cb(tx);
 						});																
 					});				
