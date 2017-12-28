@@ -1,10 +1,10 @@
 {
   "name": "msgchain",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Module to build a chain of messages to be committed to energy blockchain.",
   "main": "msgchain.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --harmony test/main.js"
   },
   "repository": {
     "type": "git",
@@ -32,5 +32,8 @@
     "stromdao-businessobject": "^0.5.27",
     "stromdao-cli-helper": "0.0.5",
     "then-request": "^4.1.0"
+  },
+  "devDependencies": {
+    "mocha": "^4.0.1"
   }
 }

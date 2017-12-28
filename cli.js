@@ -41,6 +41,36 @@ vorpal
 			vorpal.log(str);callback();
 		});		
 });
+
+vorpal
+  .command('message <file>')    
+  .description("Append Message") 
+  .option('-a, --address <energy_chain>', 'Energy Chain Address to append to')
+  .types({
+    string: ['a', 'string']
+  }) 
+  .action(function (args,callback) {	
+		var content = fs.readFileSync(args.file, 'utf8').toString();		
+		if(typeof args.options.address != "undefined") address = args.options.address; else address=null;
+		msgchain.msg(content,address,function(str) {
+			vorpal.log(str);
+			callback();
+		});		
+});
+
+vorpal
+  .command('tail')    
+  .description("Retrieves full tail of message") 
+  .option('-a, --address <energy_chain>', 'Energy Chain Address to tail')
+  .types({
+    string: ['a', 'string']
+  }) 
+  .action(function (args,callback) {					
+		msgchain.tail(args.options.address,function(str) {
+			vorpal.log(str);
+			callback();
+		});		
+});
 		
 if(typeof process.env.rpcprovider !="undefined") {	
 		global.rpcprovider=process.env.rpcprovider;
