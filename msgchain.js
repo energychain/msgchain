@@ -5,12 +5,9 @@ const IPFS = require('ipfs');
 
 
 module.exports = function() {
-
-	
-	
 	 this.retrieve=function(hash,cb) {
 		var _retr=function(ipfs_hash,cb) {			
-			request('GET', 'https://fury.network/ipfs/'+ipfs_hash,{timeout:30000}).done(function (res) {
+			request('GET', 'https://fury.network/ipfs/'+ipfs_hash,{timeout:30000}).catch(function(e) {    if((typeof cb != "undefined")&&(cb!=null)) cb(null);  }).then(function (res) {
 			  if((typeof cb != "undefined")&&(cb!=null)) cb(res.getBody().toString());
 			});
 		}
