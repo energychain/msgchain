@@ -28,7 +28,7 @@
   "dependencies": {
     "cli-helper": "^0.2.1",
     "dotenv": "^4.0.0",
-    "ipfs": "^0.27.5",
+    "ipfs": "^0.65.0",
     "stromdao-businessobject": "^0.5.27",
     "stromdao-cli-helper": "0.0.5",
     "then-request": "^4.1.0"
